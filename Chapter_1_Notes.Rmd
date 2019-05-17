@@ -1,0 +1,63 @@
+---
+title: "Practical Stats - Chapter 1"
+author: "George Khalilieh"
+date: "5/16/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Legal Note:
+I'm copying some text verbatim from the book for studying purposes. 
+I've already purchased the book and am using this for educational purposes.
+
+## Data Types
+There are two basic types of structured data: numeric and categorical. Numeric data comes in two forms:
+continuous, such as wind speed or time duration, and discrete, such as the count of the occurrence of an
+event. Categorical data takes only a fixed set of values, such as a type of TV screen (plasma, LCD, LED,
+etc.) or a state name (Alabama, Alaska, etc.). Binary data is an important special case of categorical data
+that takes on only one of two values, such as 0/1, yes/no, or true/false. Another useful type of categorical
+data is ordinal data in which the categories are ordered; an example of this is a numerical rating (1, 2, 3,
+4, or 5).
+
+## Rectangular Data
+The typical frame of reference for an analysis in data science is a rectangular data object, like a
+spreadsheet or database table.
+
+### Data frame
+Rectangular data (like a spreadsheet) is the basic data structure for statistical and machine learning models.
+### Feature
+A column in the table is commonly referred to as a feature.
+Synonyms
+attribute, input, predictor, variable
+
+Rectangular data is essentially a two-dimensional matrix with rows indicating records (cases) and
+columns indicating features (variables). The data doesn’t always start in this form: unstructured data (e.g.,
+text) must be processed and manipulated so that it can be represented as a set of features in the rectangular
+data (see “Elements of Structured Data”). Data in relational databases must be extracted and put into a
+single table for most data analysis and modeling tasks.
+
+## Data Frames and Indexes
+Traditional database tables have one or more columns designated as an index. This can vastly improve the
+efficiency of certain SQLqueries. In Python, with the pandas library, the basic rectangular data structure
+is a DataFrame object. By default, an automatic integer index is created for a DataFrame based on the
+order of the rows. In pandas, it is also possible to set multilevel/hierarchical indexes to improve the
+efficiency of certain operations.
+In R, the basic rectangular data structure is a data.frame object. A data.frame also has an implicit
+integer index based on the row order. While a custom key can be created through the row.names attribute,
+the native R data.frame does not support user-specified or multilevel indexes. To overcome this
+deficiency, two new packages are gaining widespread use: data.table and dplyr. Both support
+multilevel indexes and offer significant speedups in working with a data.frame.
+
+
+```{r cars}
+summary(cars)
+```
+
+
+```{r pressure, echo=FALSE}
+### Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+plot(pressure)
+```
+
